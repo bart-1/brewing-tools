@@ -1,0 +1,45 @@
+{
+  "folders": [
+	{
+		"path": "../../../printshop2"
+	},
+	{
+		"path": "../../../PoolTimer"
+	},
+	{
+		"path": "../../../draw-context"
+	},
+	{
+		"path": "../../../memo-game"
+	},
+	{
+		"path": "../../../css-stylizer"
+	},
+	{
+		"path": "../../../restApi"
+	},
+	{
+		"path": "../../../laravel-api-auth"
+	},
+	{
+		"path": "../../../lapi"
+	},
+	{
+		"path": "../../../react_weather_app"
+	},
+	{
+		"path": "../../../JSONtoFlatObject"
+	},
+	{
+		"path": "../../../flags-game"
+	},
+	{
+		"path": "../.."
+	}
+],
+  "settings": {
+    "workbench.settings.useSplitJSON": true,
+    "liveServer.settings.multiRootWorkspaceName": "restApi",
+    "liveServer.settings.port": 8001
+  }
+}

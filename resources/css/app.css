@@ -1,0 +1,46 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    --background: rgb(13, 10, 10);
+    --window-background: rgb(20, 17, 17);
+    --text-body: rgb(209, 94, 0);
+    --text-strong: rgb(253, 156, 75);
+    --accent: #ab0d69;
+    --btn-bg: rgb(13, 10, 10);
+    --btn-txt: rgb(253, 156, 75);
+    --btn-hov: rgb(33, 20, 9);
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-body);
+}
+/* html[data-theme="light"] {
+    --background:  rgb(13, 10, 10);
+    --window-background:  rgb(20, 17, 17);
+    --text-body: rgb(253, 156, 75);
+    --text-strong: rgb(253, 203, 75);
+    --accent: #ab0d69;
+    --btn-bg: rgb(13, 10, 10);
+    --btn-txt: rgb(253, 156, 75);
+    --btn-hov: rgb(46, 40, 40);
+}
+
+html[data-theme="dark"] {
+    --background:  rgb(13, 10, 10);
+    --window-background: #0c0c0c;
+    --text-body: #cecaca;
+    --text-strong: #ffffff;
+    --accent: #ab0d69;
+    --btn-bg: #c87da9;
+    --btn-txt: #000000;
+    --btn-hov: #c2e03a;
+} */
