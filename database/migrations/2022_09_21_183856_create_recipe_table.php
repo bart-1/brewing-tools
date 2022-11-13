@@ -29,7 +29,7 @@ return new class extends Migration
             $table->smallInteger('end_blg')->unsigned();
             $table->smallInteger('alcohol')->unsigned();
             $table->smallInteger('volume')->unsigned();
-            $table->json('base')->nullable();
+            $table->text('base')->nullable();
             $table->json('hops')->nullable();
             $table->json('yeast')->nullable();
             $table->json('yeast_nutriens')->nullable();

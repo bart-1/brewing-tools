@@ -1,13 +1,11 @@
-import React, { ReactNode, SyntheticEvent, useEffect } from "react";
+import React, { SyntheticEvent, useEffect } from "react";
 import Button from "../../../ts/Shared/Button";
-import Checkbox from "../../../ts/Shared/Checkbox";
-import Guest from "../../Layouts/AuthTemplate";
-import Input, { InputType } from "../../../ts/Shared/Input";
-import ValidationErrors from "../../../ts/Shared/ValidationErrors";
+import Checkbox from "../../Shared/Checkbox";
+import ValidationErrors from "../../Shared/ValidationErrors";
 import { Link, useForm } from "@inertiajs/inertia-react";
-import Template from "../../Layouts/Template";
-import AuthTemplate from "../../Layouts/AuthTemplate";
-import Label from "../../../ts/Shared/Label";
+import Label from "../..//Shared/Label";
+import Input from "../../Shared/Input";
+import Card from "../Components/Card";
 
 interface LoginProps {
     status: string;
@@ -50,7 +48,7 @@ function Login({ status, canResetPassword }: LoginProps) {
     };
 
     return (
-        <AuthTemplate>
+        <Card>
             {status && (
                 <div className="mb-4 text-sm font-medium text-green-600">
                     {status}
@@ -60,13 +58,17 @@ function Login({ status, canResetPassword }: LoginProps) {
             <ValidationErrors errors={errors} />
 
             <form onSubmit={submit}>
-                <div>
-                    <Label forInput="email" value="E-mail" />
+                <div className="text-white">
+                    <Label
+                        forInput="email"
+                        value="E-mail"
+                        className="text-white"
+                    />
                     <Input
                         type="text"
                         name="email"
                         value={data.email}
-                        className="block w-full mt-1"
+                        className="block w-full mt-1 rounded-sm"
                         autoComplete="username"
                         isFocused={true}
                         handleChange={onHandleChange}
@@ -74,12 +76,16 @@ function Login({ status, canResetPassword }: LoginProps) {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password" value="Password" />
+                    <Label
+                        forInput="password"
+                        value="Password"
+                        className="text-white"
+                    />
                     <Input
                         type="password"
                         name="password"
                         value={data.password}
-                        className="block w-full mt-1"
+                        className="block w-full mt-1 rounded-sm"
                         autoComplete="current-password"
                         handleChange={onHandleChange}
                     />
@@ -92,16 +98,14 @@ function Login({ status, canResetPassword }: LoginProps) {
                         handleChange={onHandleChange}
                     />
 
-                    <span className="ml-2 text-sm text-gray-600">
-                        Remember me
-                    </span>
+                    <span className="ml-2 text-sm text-white">Remember me</span>
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
                     {canResetPassword && (
                         <Link
                             href={"/forgot-password"}
-                            className="text-sm text-gray-600 underline hover:text-gray-900"
+                            className="text-sm underline text-white hover:text-yellow-400"
                         >
                             Forgot your password?
                         </Link>
@@ -117,7 +121,7 @@ function Login({ status, canResetPassword }: LoginProps) {
                     </Button>
                 </div>
             </form>
-        </AuthTemplate>
+        </Card>
     );
 }
 

@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Repositories\BaseRepository;
-
+namespace App\Repositories;
 
 abstract class BaseRepository
 {
@@ -12,10 +11,14 @@ abstract class BaseRepository
     {
         return $this->model->get($columns);
     }
-
-    public function getOne($columns = ["*"], $id)
+    public function getAllExclude($columns = [""])
     {
-        return $this->model->where($id === 'id')->get($columns);
+        return $this->model->get($columns);
+    }
+
+    public function getOne($id, $columns = ["*"])
+    {
+        return $this->model->where('id', '=', $id)->select($columns)->get();
     }
 
     public function create($data)

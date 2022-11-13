@@ -52,15 +52,42 @@ class User extends Authenticatable
         }
 
     }
+  
 
-    public function recipes()
+    public function isFriend($friend)
+    {
+        if (Auth::user()->friend === $friend) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function isRecipeOwner($recipe)
+    {
+        if (Auth::user()->recipe === $recipe) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function recipe()
     {
         return $this->hasMany(Recipe::class, 'user_id');
+    }
+    public function friend()
+    {
+        return $this->hasMany(Friend::class, 'member_id');
     }
 
     public function role()
     {
         return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id');
+    }
+    public function team()
+    {
+        return $this->belongsToMany(Team::class, 'teams', 'user_id', 'editor_id');
     }
     // public function group()
     // {

@@ -1,5 +1,7 @@
 import React, { ReactNode } from "react";
-import NavButtonsMenu from "../Shared/NavButtonsMenu";
+import NavButtonsMenu from "../Pages/Components/NavButtonsMenu";
+import ThemeSwitcher from "../Pages/Components/ThemeSwitcher";
+import ToolsLayerTemplate from "./ToolsLayerTemplate";
 
 interface TemplateChildren {
     children: ReactNode | ReactNode[];
@@ -8,22 +10,26 @@ interface TemplateChildren {
 const Template = ({ children }: TemplateChildren) => {
     return (
         <>
-            <div className="flex justify-between w-full mb-5">
+            <div className="fixed z-40 flex justify-between w-full h-20 mb-5 bg-slate-900 dark:bg-black shadow-md">
                 <NavButtonsMenu
-                    classNameBtn="border-1 border-[color:var(--text-body)] mr-3"
-                    classNameDiv="bg-black w-fit p-5 justify-self-start rounded-br-lg"
-                    navRoutes={["start", "panel", "admin"]}
+                    classNameBtn="mr-3"
+                    classNameDiv=" bg-slate-900 dark:bg-black shadow-md w-fit p-5 justify-self-start rounded-br-lg"
+                    navRoutes={[{route: "start", method: "get"}, {route: "panel", method: "get"}, {route: "admin", method: "get"}]}
                     buttonsSize="m"
                 />
-                    <NavButtonsMenu
-                        classNameBtn="border-1 border-[color:var(--text-body)] mr-3"
-                        classNameDiv="bg-black w-fit p-5 justify-self-end rounded-bl-lg"
-                        navRoutes={["login", "logout", "register"]}
+                <ThemeSwitcher />
+                <NavButtonsMenu
+                    classNameBtn="border-1 border-[color:var(--text-body)] mr-3"
+                    classNameDiv=" bg-slate-900 dark:bg-black shadow-md w-fit p-5 justify-self-end rounded-bl-lg"
+                    navRoutes={[{ route: "login", method: "get"}, {route: "logout", method: "post"}, {route:"register", method: "get"}]}
                     buttonsSize="m"
                     label="user"
-                    />
+
+                />
             </div>
-            <div className="flex justify-center gap-5">{children}</div>
+            <div className="flex flex-col flex-wrap ">
+                <ToolsLayerTemplate>{children}</ToolsLayerTemplate>
+            </div>
         </>
     );
 };

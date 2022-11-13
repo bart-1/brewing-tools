@@ -2,27 +2,42 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-:root {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@layer base {
+    body {
+        @apply min-h-screen h-full bg-gradient-to-b from-indigo-600 dark:from-gray-900 via-indigo-900 dark:via-slate-900 to-black dark:to-black;
+    }
+    :root {
+        @apply m-0 p-0 box-border;
+    }
+    label {
+        @apply text-white dark:text-gray-300;
+    }
+    input {
+        @apply text-gray-700 dark:text-black;
+    }
 }
 
 html {
-    --background: rgb(13, 10, 10);
-    --window-background: rgb(20, 17, 17);
-    --text-body: rgb(209, 94, 0);
+    --background: rgb(109, 109, 109);
+    --window-background: rgb(69, 68, 68);
+    --background-from: rgb(56, 9, 86);
+    --background-to: rgb(81, 50, 12);
+    --nav-panel: rgb(0 0 0);
+    --tools-body: rgb(26, 26, 26);
+    --table-row: rgb(109, 109, 109);
+    --table-row-dark: rgb(90, 90, 90);
+    --table-row-text: rgb(8, 8, 8);
+    --table-title-bg: rgb(151, 0, 193);
+    --table-title-text: rgb(255, 255, 255);
+    --text-body: rgb(237, 222, 222);
+    --text-negative: rgb(192, 192, 192);
     --text-strong: rgb(253, 156, 75);
     --accent: #ab0d69;
     --btn-bg: rgb(13, 10, 10);
     --btn-txt: rgb(253, 156, 75);
-    --btn-hov: rgb(33, 20, 9);
+    --btn-hov: rgb(34, 34, 34);
 }
 
-body {
-    background-color: var(--background);
-    color: var(--text-body);
-}
 /* html[data-theme="light"] {
     --background:  rgb(13, 10, 10);
     --window-background:  rgb(20, 17, 17);

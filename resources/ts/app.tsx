@@ -5,12 +5,12 @@ import React, { ReactNode } from "react";
 import { createRoot } from "react-dom/client";
 import { createInertiaApp } from "@inertiajs/inertia-react";
 import { InertiaProgress } from "@inertiajs/progress";
-import ThemeProvider from "./Shared/ThemeContext";
+import ThemeProvider from "./Layouts/ThemeContext";
 import Template from "./Layouts/Template";
 
-
 const appName =
-    window.document.getElementsByTagName("title")[0]?.innerText || "Printshop2";
+    window.document.getElementsByTagName("title")[0]?.innerText ||
+    "Brewing Tools";
 
 let theme = "light";
 if (theme === "light")

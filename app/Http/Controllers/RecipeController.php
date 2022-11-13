@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\RecipeRepository;
 
-class RecipeController extends Controller implements ControllerInterface
+class RecipeController extends Controller
 {
     protected $repository;
 
@@ -13,9 +13,4 @@ class RecipeController extends Controller implements ControllerInterface
         $this->repository = $repository;
     }
 
-    public function index()
-    {
-      return $this->repository->getAll();
-
-    }
 }

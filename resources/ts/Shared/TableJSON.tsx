@@ -15,7 +15,6 @@ const TableJSON = ({
 }: TableProps) => {
     const [baseRoutePath, setBaseRouthPath] = useState("");
 
-
     useEffect(() => {
         setBaseRouthPath(window.location.pathname);
     }, []);
@@ -46,9 +45,7 @@ const TableJSON = ({
             <table
                 className={`text-xs table-auto w-full text-[color:var(--text-body)]`}
             >
-                <thead>
-                    {/* <tr>{thead}</tr> */}
-                </thead>
+                <thead>{/* <tr>{thead}</tr> */}</thead>
                 <tbody>{tbody}</tbody>
             </table>
         </div>

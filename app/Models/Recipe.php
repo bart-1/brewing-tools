@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class Recipe extends Pivot
 {
+    protected $table = 'recipes';
     protected $fillable = [
         'name',
         'description',
@@ -22,6 +23,16 @@ class Recipe extends Pivot
         'yeast_nutriens',
         'addons',
         'refermentation_dose',
+
+    ];
+    protected $casts = [
+        // 'addons' => 'array',
+        'yeast' => 'array',
+        'addons' => 'array',
+        'hops' => 'array',
+        'yeast' => 'array',
+        'base' => 'array',
+        'yeast_nutriens' => 'array',
 
     ];
 

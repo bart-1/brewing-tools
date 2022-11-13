@@ -2,7 +2,7 @@
 namespace App\Repositories;
 
 use App\Models\Recipe;
-use App\Repositories\BaseRepository\BaseRepository;
+use App\Repositories\BaseRepository;
 
 class RecipeRepository extends BaseRepository
 {
@@ -11,7 +11,7 @@ class RecipeRepository extends BaseRepository
         $this->model = $model;
     }
 
-    public function getAllByType($type)
+       public function getAllByType($type)
     {
         return $this->model->where('type' === $type)->orderBy('id', 'asc')->get();
     }

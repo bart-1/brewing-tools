@@ -1,13 +1,16 @@
 {
-  "folders": [
-	{
-		"name": "brewing-tools",
-		"path": "."
-	}
-],
-  "settings": {
-    "workbench.settings.useSplitJSON": true,
-    "liveServer.settings.multiRootWorkspaceName": "restApi",
-    "liveServer.settings.port": 8001
-  }
+    "folders": [
+        {
+            "name": "brewing-tools",
+            "path": "."
+        }
+    ],
+    "settings": {
+        "workbench.settings.useSplitJSON": true,
+        "liveServer.settings.multiRootWorkspaceName": "restApi",
+        "liveServer.settings.port": 8001,
+        "todohighlight.defaultStyle": {
+        
+        }
+    }
 }

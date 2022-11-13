@@ -1,11 +1,10 @@
 import React, { SyntheticEvent, useEffect } from "react";
 import Button from "../../../ts/Shared/Button";
-import Guest from "../../Layouts/AuthTemplate";
 import Input from "../../../ts/Shared/Input";
 import Label from "../../../ts/Shared/Label";
 import ValidationErrors from "../../../ts/Shared/ValidationErrors";
 import { Link, useForm } from "@inertiajs/inertia-react";
-import AuthTemplate from "../../Layouts/AuthTemplate";
+import Card from "../Components/Card";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -44,7 +43,7 @@ export default function Register() {
     };
 
     return (
-        <AuthTemplate>
+        <Card>
             <ValidationErrors errors={errors} />
 
             <form onSubmit={submit}>
@@ -110,7 +109,7 @@ export default function Register() {
                 <div className="flex items-center justify-end mt-4">
                     <Link
                         href={"/login"}
-                        className="text-sm text-gray-600 underline hover:text-gray-900"
+                        className="text-sm underline hover:text-blue-600"
                     >
                         Already registered?
                     </Link>
@@ -124,6 +123,6 @@ export default function Register() {
                     </Button>
                 </div>
             </form>
-        </AuthTemplate>
+        </Card>
     );
 }

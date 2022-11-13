@@ -4,7 +4,7 @@ import { Link } from "@inertiajs/inertia-react";
 export type ButtonSize = "l" | "m" | "s" | "xs";
 
 export interface NavLinkButtonInterface {
-    href: string;
+    href?: string;
     method?: string;
     active?: boolean;
     children?: ReactNode | ReactNode[] | string | undefined;
@@ -12,21 +12,21 @@ export interface NavLinkButtonInterface {
     size?: ButtonSize;
     bgColor?: string;
     txtColor?: string;
-    hoverColor?: string;
     dataCy?: string;
     disabled?: boolean;
+    type?: 'button' | 'submit' | 'reset';
 }
 
 const NavLinkButton: FC<NavLinkButtonInterface> = ({
+    type='button',
     href,
     active = true,
     children,
     method = "get",
     className,
-    bgColor = `bg-[color:var(--btn-bg)]`,
-    hoverColor = `bg-[color:var(--btn-hov)]`,
+    bgColor = `bg-blue-900 hover:bg-sky-400 dark:bg-slate-900 dark:hover:bg-indigo-800`,
     size = "m",
-    txtColor = `text-[color:var(--btn-txt)]`,
+    txtColor = `text-yellow-400 dark:text-gray-500 hover:text-yellow-100 dark:hover:text-gray-200`,
     dataCy,
     disabled,
 }) => {
@@ -41,8 +41,9 @@ const NavLinkButton: FC<NavLinkButtonInterface> = ({
         <Link
             data-cy={dataCy}
             disabled={disabled}
+            type={type}
             as="button"
-            href={active ? href : ""}
+            href={href ? href : ""}
             method={method}
             className={`inline-flex items-center border-transparent rounded-md font-normal ${
                 size === "xs" && "px-1.5 py-1 border text-xxs"
@@ -50,8 +51,8 @@ const NavLinkButton: FC<NavLinkButtonInterface> = ({
                 size === "m" && "px-4 py-2 border text-xs"
             } ${size === "l" && "px-6 py-4 border text-s"} ${
                 !isPressed
-                    ? `${txtColor} ${bgColor} hover:${hoverColor}`
-                    : `${txtColor} ${hoverColor} hover:${bgColor}`
+                    ? `${txtColor} ${bgColor} brightness-50`
+                    : `${txtColor} ${bgColor} brightness-100`
             } ${disabled && "opacity-25"} ${className}`}
         >
             {children}

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import ApplicationLogo from "./ApplicationLogo";
-import { InertiaRouteProps } from "../Shared/Interfaces";
+import { InertiaRouteProps } from "./Interfaces";
 import Button from "./Button";
 import { useThemeContext } from "./ThemeContext";
 import NavLink from "./NavLink";
@@ -11,8 +11,7 @@ import { usePage } from "@inertiajs/inertia-react";
 import { Page } from "@inertiajs/inertia";
 
 const Header = () => {
-     const { auth, navRoutes } = usePage<Page & InertiaRouteProps>()
-         .props;
+    const { auth, navRoutes } = usePage<Page & InertiaRouteProps>().props;
     const { colorTheme, setColorTheme } = useThemeContext();
     return (
         <>

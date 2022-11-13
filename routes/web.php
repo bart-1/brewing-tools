@@ -20,12 +20,13 @@ Route::get('/', function () {
 });
 
 Route::get('/start', [StartPageController::class, 'index'])->name('Start');
-Route::get('/recipes', [RecipePageController::class, 'index'])->name('Start');
 
 Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
-
     Route::get('/panel', [PanelPageController::class, 'index'])->name('Panel');
+    Route::get('/panel/{id}', [PanelPageController::class, 'show'])->name('Panel');
 });
+
+// Route::get('/panel/recipes/{id}', [PanelPageController::class, 'index'])->name('Panel')->middleware('isFriend:{id}');
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
